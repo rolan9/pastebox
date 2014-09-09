@@ -1,4 +1,13 @@
 <?php
+    /**
+     * Image Uploadscript by Wolf Wortmann
+     * 
+     * @author (c) Copyright 2014 Wolf Wortmann <wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
+     * @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2014 Wolf Wortmann <wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
+     */
+
+    //Needs som Variables to run... look at the end of File
+    
     require_once 'conf/sys_conf.php';
     if(file_exists('conf/local_conf.php')){
         include_once 'conf/local_conf.php';
@@ -289,4 +298,42 @@
         echo "<br>";
         
     }
+?>
+<?php
+    /**
+     * CONFIG file for Image Uploadscript by Wolf Wortmann
+     * 
+     * @author (c) Copyright 2014 Wolf Wortmann <wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
+     * @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2014 Wolf Wortmann <wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
+     *
+     * !!! NEVER CHANGE ANYTHING !!!! 
+     * pls use the local_conf.php to config individualy!! 
+     */
+//GENERAL
+    error_reporting(0);                               //Error reporting level         (string/int)    look >http://davidwalsh.name/php-error_reporting-error-reporting< for values 
+    ini_set('display_errors', '1');
+    date_default_timezone_set("UTC");                 //Timezone default set          (string)        look >https://php.net/manual/de/timezones.php< for values
+
+    $imgT['origDir']          =   'images/';          //Orginals direction            (string)
+    $imgT['tumbDir']          =   'thumbs/';          //Thumbnails direction          (string)
+    $imgT['thumbs']           =   true;               //Thumbnails creation           (bool)
+    $imgT['water_marking']    =   true;               //Picture watermarking          (bool)
+    $imgT['info2db']          =   true;               //Write pic infos in DB         (bool)
+    $imgT['up']['user_up']    =   true;               //User Picture Upload           (bool)
+    $imgT['users']            =   true;               //User Login and registry       (bool)
+
+//UPLOAD
+    $imgT['up']['use_pw']     =   true;               //Use Password(s) for Upload    (bool)
+    $imgT['up']['password']   =   array();            //Password for upl. Img's       ( array("string/int") )
+
+//DATABASE
+    $imgT['db']['database']   =   'database name';    //Name of Database              (string/int)
+    $imgT['db']['server']     =   'server url';       //Url of database               (string/int)
+    $imgT['db']['user']       =   'user name';        //Username of database user     (string/int)
+    $imgT['db']['password']   =   'password';         //Password for username         (string/int)
+
+//SOMETHING
+    $imgT['max_thumb_size']   =   500;                //Max widtht/height in px       (int)
+    $imgT['max_file_size']    =   ini_get('upload_max_filesize');//max filesize       (int)
+    $imgT['watermark_img']    =   $_FILES['watermark']['tmp_name'][0];//Watermark dir (string)        Coud be a static file Path or > $_FILES['watermark']['tmp_name'][0] < for the watermark input arr.
 ?>
