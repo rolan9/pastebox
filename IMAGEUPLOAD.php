@@ -337,3 +337,21 @@
     $imgT['max_file_size']    =   ini_get('upload_max_filesize');//max filesize       (int)
     $imgT['watermark_img']    =   $_FILES['watermark']['tmp_name'][0];//Watermark dir (string)        Coud be a static file Path or > $_FILES['watermark']['tmp_name'][0] < for the watermark input arr.
 ?>
+<?php
+ //FORM
+ /*
+<form action="" method="POST" enctype="multipart/form-data">
+    <?php
+        echo '<span>maximal '.ini_get('max_file_uploads')." Bilder!</span>";
+    ?>
+    <label>Bild(er)</label>
+        <input type="file" multiple="multiple" name="imgUpload[]" />
+    <label>Wasserzeichen</label>
+        <input type="file" name="watermark[]" />
+    <label>Copyright</label>
+        <input type="text" name="copyright">
+    <label>Benutzername</label>
+        <input id="InputUsernameUpload" type="text" name="user">
+</form>
+*/
+?>
