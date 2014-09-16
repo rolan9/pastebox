@@ -2,9 +2,8 @@ Pastebox
 ========
 Skripte, Ideen, unfertiges, dies, das.
 
+COPYRIGHT (c)
 ========
-Pastebox
-
 Gilt für alle Dateien in dieser Bibiliothek, wenn nicht anders angegeben:
 
 @author (c) Copyright 2014 Wolf Wortmann <wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
