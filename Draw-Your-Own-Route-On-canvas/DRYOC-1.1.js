@@ -1,8 +1,9 @@
 /**
  * DRYOC - Draw Your Own Route On canvas
+ * v 1.1
  *
  * @author (c) Copyright 2014 Wolf Wortmann <wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
- * @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2014 Wolf Wortmann <wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
+ * @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2014 Wolf Wortmann <http://wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
  *
  */
 (function($) {
@@ -36,6 +37,8 @@
         DRYOC.DOM_this.height = DRYOC.c_height;
 
         console.log(DRYOC);
+
+        DRYOC.jQ_this.addClass('DRYOC_canvas');
         if (DRYOC.grid == true) {
             grid();
         };
@@ -105,8 +108,8 @@
         function init_edit(){
             var html = "<div class='DRYOC_edit'>\
                             <div class='DRYOC_bar'>\
-                                <button class='DRYOC_reprint'>Zeichnen</button>\
-                                <button class='DRYOC_reset'>Reset</button>\
+                                <button class='DRYOC_reprint DRYOC_button'>Zeichnen</button>\
+                                <button class='DRYOC_reset DRYOC_button'>Reset</button>\
                             </div>\
                             <div class='DRYOC_points' contenteditable></div>\
                         </div>\
@@ -124,11 +127,11 @@
                                 box-sizing: border-box;\
                                 word-wrap: break-word;\
                             }\
-                            .DRYOC_bar{\
+                            .DRYOC_edit div.DRYOC_bar.DRYOC_bar{\
                                 height: 30px;\
                                 border-bottom: 1px solid rgba(200,200,200, .4);\
                             }\
-                            .DRYOC_edit button{\
+                            .DRYOC_edit button.DRYOC_button.DRYOC_button{\
                                 display: inline-block;\
                                 border: none;\
                                 border-radius: 0px;\
@@ -140,10 +143,10 @@
                                 transition: all .4s;\
                                 cursor: pointer;\
                             }\
-                            .DRYOC_edit button:hover{\
+                            .DRYOC_edit button.DRYOC_button.DRYOC_button:hover{\
                                 background-color: rgba(200,200,200, .4);\
                             }\
-                            .DRYOC_points{\
+                            .DRYOC_edit div.DRYOC_points.DRYOC_points{\
                                 width: 100%;\
                                 min-height: 2em;\
                                 padding: 20px;\
@@ -167,6 +170,14 @@
                         $('.DRYOC_points').append(', "ex": '+relX+', "ey": '+relY+'}');
                     }
                 }
+                if (i > 0) {
+                	try {
+                    	print_path($.parseJSON('['+$(this).parent().find('.DRYOC_points').html()+']'),true,0);
+	                }
+	                catch(ex) {
+	                    alert('Syntaxeror in JSON form Data! (Press Reset button and retry!)');
+	                }
+                };
                 i++;
             });
             $('.DRYOC_reprint').click(function(){
@@ -181,7 +192,7 @@
                 i = 0;
                 DRYOC.done = DRYOC.done;
                 print_path(DRYOC.points,true);
-            })
+            });
         }
     }
 })(jQuery);
