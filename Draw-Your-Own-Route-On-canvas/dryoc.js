@@ -8,19 +8,20 @@
 (function($) {
     $.fn.DRYOC = function(opt) {
         var defaults = {
-            points          : [{sx: 5, sy: 5, ex: 30, ey: 5},{ex: 5, ey: 30},{ex: 5, ey: 5}],
-            defaultColor    : 'rgb(0,0,0)',
-            overColor       : 'rgb(0,190,190)',
-            canvas          : false,
-            ctx             : false,
-            draw            : true,
-            edit            : false,
+            points          : [{"sx": 5, "sy": 5, "ex": 10, "ey": 30}, {"ex": 15, "ey": 20}, {"ex": 20, "ey": 30}, {"ex": 25, "ey": 5}, {"sx": 30, "sy": 5, "ex": 35, "ey": 30}, {"ex": 40, "ey": 20}, {"ex": 45, "ey": 30}, {"ex": 50, "ey": 5}],
             done            : 0,
-            c_width         : 0,
-            c_height        : 0,
+            defaultColor    : 'rgba(0,0,0, .7)',
+            overColor       : 'rgb(0,190,190)',
             smoothingEnabled: true,
             lineWidth       : 3,
             lineCap         : 'round',
+            draw            : true,
+            edit            : false,
+            grid            : false,
+            c_width         : 0,
+            c_height        : 0,
+            canvas          : false,
+            ctx             : false,
         };
         var DRYOC = $.extend(defaults, opt);
         DRYOC.opt = opt;
@@ -29,9 +30,12 @@
         DRYOC.DOM_this = DRYOC.jQ_this.get()[0];
         DRYOC.ctx = DRYOC.DOM_this.getContext('2d');
 
-        if (DRYOC.c_width == 0) {DRYOC.c_width = DRYOC.jQ_this.width()};
+        if (DRYOC.c_width == 0) {DRYOC.c_width = DRYOC.jQ_this.width()}
         if (DRYOC.c_height == 0) {DRYOC.c_height = DRYOC.jQ_this.height()};
+        DRYOC.DOM_this.width = DRYOC.c_width;
+        DRYOC.DOM_this.height = DRYOC.c_height;
 
+        console.log(DRYOC);
         if (DRYOC.grid == true) {
             grid();
         };
@@ -45,7 +49,6 @@
         function draw_line(sx,sy,ex,ey,c){
             if (typeof sx == 'undefined') {sx = last.ex};
             if (typeof sy == 'undefined') {sy = last.ey};
-            //console.log(sx+' , '+sy+' , '+ex+' , '+ey+' , '+c);
 
             DRYOC.ctx.beginPath();
                 DRYOC.ctx.moveTo(sx,sy);
