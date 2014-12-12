@@ -96,9 +96,10 @@ Bestimmt die Breite des Canvas
 500 (int)
 ```
 #### c_height
-Bestimmt die Hvhe des Canvas
+Bestimmt die H&ouml;he des Canvas
 ``````javascript
 600 (int)
 ```
+<iframe width="600" height="1000" src="https://cdn.rawgit.com/wolf-w/pastebox/master/Draw-Your-Own-Route-On-canvas/index.html"></iframe>
 [wolf wortmann]:http://wolf.wolfgang-m.de
 [1]:http://www.w3schools.com/tags/canvas_linecap.asp
