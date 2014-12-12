@@ -2,7 +2,7 @@
 DRYOC braucht jQuery, einen `canvas`-Tag und eine Zeile Code.. Ansonnsten nichts.
 ## [Demo][2]
 ### Init
-Die erste Route wird schnelle da sein, als Du schauen kannst!
+Die erste Route wird schneller da sein, als Du schauen kannst!
 ```javascript
 $('elem').DRYOC();
 ```
@@ -49,7 +49,7 @@ nur Endpunkte, Startpunkte sind die davorstehenden Endpunkte.
 {"ex": end-X, "ey": end-Y}, (object)
 ```
 #### done
-Bestimmt die Anzahl (vom 1. Startpunkt aus ) an (mit der `overColor`) markierten Linienst&uuml;cken z.B. bereits zur&uuml;ckgelegte Strecke.
+Bestimmt die Anzahl (vom erstren Punkt aus ) an (mit der `overColor`) markierten Linienst&uuml;cken z.B. bereits zur&uuml;ckgelegte Strecke.
 ``````javascript
 0 (int)
 ```
@@ -102,6 +102,9 @@ Bestimmt die H&ouml;he des Canvas
 600 (int)
 ```
 <!--<iframe width="600" height="1000" src="https://cdn.rawgit.com/wolf-w/pastebox/master/Draw-Your-Own-Route-On-canvas/index.html"></iframe>-->
-[wolf wortmann]:http://wolf.wolfgang-m.de
+### COPYRIGHT & LICENSE
+DRYOC is coded by [Wolf Wortmann][3].<hr>
+Feel __free__ to use, modify and redistribute this code. But please __keep__ this copyright notice. (c) Copyright 2014 Wolf Wortmann <http://wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
+[3]:http://wolf.wolfgang-m.de
 [1]:http://www.w3schools.com/tags/canvas_linecap.asp
 [2]:https://cdn.rawgit.com/wolf-w/pastebox/master/Draw-Your-Own-Route-On-canvas/index.html
