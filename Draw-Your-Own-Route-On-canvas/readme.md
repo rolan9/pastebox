@@ -11,16 +11,16 @@ $('canvas').DRYOC();
 ```
 ``````html
 <canvas><!-- wird benutzt --></canvas>
-<canvas><!-- wird NICHT benutzt!! -></canvas>
+<canvas><!-- wird NICHT benutzt!! --></canvas>
 ```
 <hr>
 ### Parameter
-Nat&uuml;rlich kannst Du noch mehr Coole sachen damit machen, als ein paar Buchstaben anzeigen zu lassen.
+Nat&uuml;rlich kannst Du noch mehr Coole sachen damit machen, als ein Pfad in Form von ein paar Buchstaben anzeigen zu lassen.
 ```javascript
 $('elem').DRYOC({
     points          : [{"sx": 5, "sy": 5, "ex": 30, "ey": 5},{"ex": 5, "ey": 30}],
     done            : 0,
-    defaultColor    : 'rgb(0,0,0)',
+    defaultColor    : 'rgba(0,0,0, .7)',
     overColor       : 'rgb(0,190,190)',
     lineWidth       : 3,
     lineCap         : 'round',
