@@ -122,6 +122,7 @@ Bestimmt die H&ouml;he des Canvas
 ### COPYRIGHT & LICENSE
 DRYOC is coded by [Wolf Wortmann][3].<hr>
 Feel __free__ to use, modify and redistribute this code. But please __keep__ this copyright notice. (c) Copyright 2014 Wolf Wortmann <http://wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
-[3]:http://wolf.wolfgang-m.de
+
 [1]:http://www.w3schools.com/tags/canvas_linecap.asp
-[2]:https://cdn.rawgit.com/wolf-w/pastebox/master/Draw-Your-Own-Route-On-canvas/index.html
+[2]:https://cdn.rawgit.com/wolf-w/pastebox/master/Draw-Your-Own-Route-On-canvas/demo-1.1.html
+[3]:http://wolf.wolfgang-m.de
