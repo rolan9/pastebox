@@ -62,7 +62,10 @@
 
             last = {'sx':sx,'sy':sy,'ex':ex,'ey':ey,'c':c};
         }
-        function print_path(points, r){
+        function print_path(points, r,done){
+            if (typeof done != 'number') {
+                done = DRYOC.done;
+            };
             if (r == true) {
                 DRYOC.ctx.clearRect(0,0,DRYOC.c_width,DRYOC.c_height);
                 if (DRYOC.grid == true) {
@@ -71,7 +74,7 @@
             };
             $.each(points,function(i,v){
                 var c = DRYOC.defaultColor;
-                if (i <= DRYOC.done-1) {
+                if (i <= done-1) {
                     c = DRYOC.overColor;
                 };
                 draw_line(v.sx,v.sy,v.ex,v.ey,c);
@@ -168,8 +171,7 @@
             });
             $('.DRYOC_reprint').click(function(){
                 try {
-                    DRYOC.done = 0;
-                    print_path($.parseJSON('['+$(this).parent().parent().find('.DRYOC_points').html()+']'),true);
+                    print_path($.parseJSON('['+$(this).parent().parent().find('.DRYOC_points').html()+']'),true,0);
                 }
                 catch(ex) {
                     alert('Syntaxeror in JSON form Data! (Press Reset button and retry!)');
