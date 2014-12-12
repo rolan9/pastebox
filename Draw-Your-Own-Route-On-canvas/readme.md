@@ -81,5 +81,15 @@ Bestimmt ob ein Gitternetz über das canvas gelegt werden soll oder nicht.
 ``````javascript
 true | false  (bool)
 ```
+#### c_width
+Bestimmt die Breite des Canvas
+``````javascript
+500 (int)
+```
+#### c_height
+Bestimmt die Höhe des Canvas
+``````javascript
+600 (int)
+```
 [wolf wortmann]:http://wolf.wolfgang-m.de
 [1]:http://www.w3schools.com/tags/canvas_linecap.asp
