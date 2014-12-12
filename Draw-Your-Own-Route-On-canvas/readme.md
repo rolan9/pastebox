@@ -6,7 +6,7 @@ Die erste Route wird schnelle da sein, als Du schauen kannst!
 $('elem').DRYOC();
 ```
 ### Parameter
-Natürlich kannst Du noch mehr Coole sachen damit machen, als ein Dreieck anzeigen zu lassen.
+Nat|rlich kannst Du noch mehr Coole sachen damit machen, als ein Dreieck anzeigen zu lassen.
 ```javascript
 $('elem').DRYOC({
     points          : [{"sx": 5, "sy": 5, "ex": 30, "ey": 5},{"ex": 5, "ey": 30}],
@@ -39,17 +39,17 @@ nur Endpunkte, Startpunkte sind die davorstehenden Endpunkte.
 {"ex": end-X, "ey": end-Y}, (object)
 ```
 #### done
-Bestimmt die Anzahl (vom 1. Startpunkt aus ) an (mit der `overColor`) markierten Linienstücken z.B. bereits zurückgelegte Strecke.
+Bestimmt die Anzahl (vom 1. Startpunkt aus ) an (mit der `overColor`) markierten Linienst|cken z.B. bereits zur|ckgelegte Strecke.
 ``````javascript
 0 (int)
 ```
 #### defaultColor
-Bestimmt die Farbe der Linie und darf in allen CSS3 gültigen Formen angegeben werden.
+Bestimmt die Farbe der Linie und darf in allen CSS3 g|ltigen Formen angegeben werden.
 ``````css
 black | #000 | #000000 | rgb(0,0,0) | rgba(0,0,0,1) (string)
 ```
 #### overColor
-Bestimmt die Farbe der von `done` markierten Linienstücke und darf in allen CSS3 gültigen Formen angegeben werden.
+Bestimmt die Farbe der von `done` markierten Linienst|cke und darf in allen CSS3 g|ltigen Formen angegeben werden.
 ``````css
 blue | #00F | #0000FF | rgb(0,0,255) | rgba(0,0,255,1) (string)
 ```
@@ -65,19 +65,19 @@ butt | round | square  (string)
 ```
 #### draw
 Bestimmt ob die Route gemalt werden soll oder nicht.<hr>
-~~__Achtung!__ Für diesen Modus, muss im `canvas`-Tag `width=""` und `height=""` gesetzt sein oder über die Parameter `c_width` und `c_height` übergeben werden!<br>Wenn über CSS gestyled wird und keine Informationen übergeben werden, kann es zu Nichtzeichnungen kommen.~~<hr>
+~~__Achtung!__ F|r diesen Modus, muss im `canvas`-Tag `width=""` und `height=""` gesetzt sein oder |ber die Parameter `c_width` und `c_height` |bergeben werden!<br>Wenn |ber CSS gestyled wird und keine Informationen |bergeben werden, kann es zu Nichtzeichnungen kommen.~~<hr>
 ``````javascript
 true | false  (bool)
 ```
 #### edit
 Schaltet den Editier-Modus ein/aus.
-Im Editiermodus, kann man auf dem canvas Punkte anklicken, die dann unterhalb des Canvas in einer Textbox im richtigen Vormat ausgegeben werden und zum überprüfen direkt von dort aus zeichenbar sind.<hr>
-~~__Achtung!__ Für diesen Modus, muss im `canvas`-Tag `width=""` und `height=""` gesetzt sein oder über die Parameter `c_width` und `c_height` übergeben werden!<br>Wenn über CSS gestyled wird und keine Informationen übergeben werden, kann es zu Verzerrungen kommen.~~<hr>
+Im Editiermodus, kann man auf dem canvas Punkte anklicken, die dann unterhalb des Canvas in einer Textbox im richtigen Vormat ausgegeben werden und zum |berpr|fen direkt von dort aus zeichenbar sind.<hr>
+~~__Achtung!__ F|r diesen Modus, muss im `canvas`-Tag `width=""` und `height=""` gesetzt sein oder |ber die Parameter `c_width` und `c_height` |bergeben werden!<br>Wenn |ber CSS gestyled wird und keine Informationen |bergeben werden, kann es zu Verzerrungen kommen.~~<hr>
 ``````javascript
 true | false  (bool)
 ```
 #### grid
-Bestimmt ob ein Gitternetz über das canvas gelegt werden soll oder nicht.
+Bestimmt ob ein Gitternetz |ber das canvas gelegt werden soll oder nicht.
 ``````javascript
 true | false  (bool)
 ```
@@ -87,7 +87,7 @@ Bestimmt die Breite des Canvas
 500 (int)
 ```
 #### c_height
-Bestimmt die Höhe des Canvas
+Bestimmt die Hvhe des Canvas
 ``````javascript
 600 (int)
 ```
