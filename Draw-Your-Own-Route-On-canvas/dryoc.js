@@ -177,8 +177,8 @@
             });$('.DRYOC_reset').click(function(){
                 $(this).parent().parent().find('.DRYOC_points').html('');
                 i = 0;
-                DRYOC.done = DRYOC.opt.done;
-                print_path(DRYOC.opt.points,true);
+                DRYOC.done = DRYOC.done;
+                print_path(DRYOC.points,true);
             })
         }
     }
