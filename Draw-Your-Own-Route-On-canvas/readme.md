@@ -13,11 +13,11 @@ $('elem').DRYOC({
     done            : 0,
     defaultColor    : 'rgb(0,0,0)',
     overColor       : 'rgb(0,190,190)',
-    smoothingEnabled: true,
     lineWidth       : 3,
     lineCap         : 'round',
     draw            : true,
     edit            : false,
+    grid            : false,
     c_width         : 0,
     c_height        : 0,
 });
@@ -26,7 +26,7 @@ $('elem').DRYOC({
 ``````javascript
 [{punkt-1},{punkt-2},{punkt-3},{...}] (array)
 ```
-Es gibt zwei Formate wie Du einen Punkt deiner Rute festlegen kannst.
+Es gibt zwei Formate wie Du einen Punkt deiner Rute festlegen kannst.<br>
 __Achtung!__ Der erste Punkt muss im format __a)__ definiert sein.
 ##### a)
 Startpunkte und Endpunkte.
@@ -43,9 +43,43 @@ Bestimmt die Anzahl (vom 1. Startpunkt aus ) an (mit der `overColor`) markierten
 ``````javascript
 0 (int)
 ```
-####defaultColor
+#### defaultColor
 Bestimmt die Farbe der Linie und darf in allen CSS3 gültigen Formen angegeben werden.
 ``````css
-black | #000 | #000000 | rgb(0,0,0) | rgba(0,0,0,1 (string)
+black | #000 | #000000 | rgb(0,0,0) | rgba(0,0,0,1) (string)
+```
+#### overColor
+Bestimmt die Farbe der von `done` markierten Linienstücke und darf in allen CSS3 gültigen Formen angegeben werden.
+``````css
+blue | #00F | #0000FF | rgb(0,0,255) | rgba(0,0,255,1) (string)
+```
+#### lineWidth
+Bestimt die Liniendicke in `px`.
+``````javascript
+3 (int)
+```
+#### lineCap
+Bestimt die Linienenden. [Definitionen][1] der Begriffe sie [hier][1]
+``````javascript
+butt | round | square  (string)
+```
+#### draw
+Bestimmt ob die Route gemalt werden soll oder nicht.<hr>
+~~__Achtung!__ Für diesen Modus, muss im `canvas`-Tag `width=""` und `height=""` gesetzt sein oder über die Parameter `c_width` und `c_height` übergeben werden!<br>Wenn über CSS gestyled wird und keine Informationen übergeben werden, kann es zu Nichtzeichnungen kommen.~~<hr>
+``````javascript
+true | false  (bool)
+```
+#### edit
+Schaltet den Editier-Modus ein/aus.
+Im Editiermodus, kann man auf dem canvas Punkte anklicken, die dann unterhalb des Canvas in einer Textbox im richtigen Vormat ausgegeben werden und zum überprüfen direkt von dort aus zeichenbar sind.<hr>
+~~__Achtung!__ Für diesen Modus, muss im `canvas`-Tag `width=""` und `height=""` gesetzt sein oder über die Parameter `c_width` und `c_height` übergeben werden!<br>Wenn über CSS gestyled wird und keine Informationen übergeben werden, kann es zu Verzerrungen kommen.~~<hr>
+``````javascript
+true | false  (bool)
+```
+#### grid
+Bestimmt ob ein Gitternetz über das canvas gelegt werden soll oder nicht.
+``````javascript
+true | false  (bool)
 ```
 [wolf wortmann]:http://wolf.wolfgang-m.de
+[1]:http://www.w3schools.com/tags/canvas_linecap.asp
