@@ -1,10 +1,11 @@
 # DRYOC - Draw Your Own Route On canvas
+<small>v 1.1</small><br>
 DRYOC braucht jQuery, einen `canvas`-Tag und eine Zeile Code.. Ansonnsten nichts.
 ## [Demo][2]
 ### Init
 Die erste Route wird schneller da sein, als Du schauen kannst!
 ```javascript
-$('elem').DRYOC();
+$(theCanvas).DRYOC();
 ```
 <hr>__Achtung!__ DRYOC kann nicht auf Arrayas angewand werden bzw benutzt nur dessen erstes Element!
 ```javascript
@@ -15,10 +16,26 @@ $('canvas').DRYOC();
 <canvas><!-- wird NICHT benutzt!! --></canvas>
 ```
 <hr>
+Bisher kann DRYOC auch nicht auf ein Canvs mehrfach angewand werden. :(
+```javascript
+$('#canvas').DRYOC(); //wird vom 2. überschireben. :( 
+$('#canvas').DRYOC();
+```
+__aber__ du kannst ein zweites (hintergrund transparentes) Canvas mit css einfachdrüberlegen! :)
+``````html
+<canvas id="c_1"><!-- wird benutzt --></canvas>
+<canvas id="c_2"><!-- wird benutzt --></canvas>
+```
+```javascript
+$('#c_1').DRYOC();
+$('#c_2').DRYOC();
+```
+..ist zwar nicht sonderlich cool.. aber immerhin eine Abhilfe. Das wird aber sicher nich gefixt.
+<hr>
 ### Parameter
 Nat&uuml;rlich kannst Du noch mehr Coole sachen damit machen, als ein Pfad in Form von ein paar Buchstaben anzeigen zu lassen.
 ```javascript
-$('elem').DRYOC({
+$(theCanvas).DRYOC({
     points          : [{"sx": 5, "sy": 5, "ex": 30, "ey": 5},{"ex": 5, "ey": 30}],
     done            : 0,
     defaultColor    : 'rgba(0,0,0, .7)',
