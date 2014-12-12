@@ -1,0 +1,45 @@
+<html id="demo">
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="dryoc.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#map').DRYOC({
+                    done: 4,
+                    edit: true,
+                });
+            });
+        </script>
+        <style>
+            #demo *{
+                margin: 0;
+                padding: 0;
+            }
+            #demo a{
+                color: rgb(200,200,200);
+                display: block;
+                margin: 10px 40px;
+                font-size: .7em;
+            }
+            #demo body{
+                background-color: rgb(40,40,40);
+                color: rgb(200,200,200);
+            }
+            #demo .wrap{
+                margin: 40px;
+            }
+            #demo canvas{
+                background: url(http://upload.wikimedia.org/wikipedia/commons/0/0b/Relief_Map_of_Germany.svg) no-repeat 0 0 / auto 100% rgb(200,200,200);
+                display: block;
+                width: 506px;
+                height: 600px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <canvas id="map" ></canvas>
+        </div>
+        <a target="_blank" title="von TUBS [CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3ARelief_Map_of_Germany.svg">Hintergrundbild von TUBS [CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons</a>
+    </body>
+</html>
