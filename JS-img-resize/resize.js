@@ -2,6 +2,8 @@
  * JS image resize
  * v 1.0
  *
+ * did NOT need jQuery! (only the demo.html)
+ *
  * @author (c) Copyright 2014 Wolf Wortmann <wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
  * @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2014 Wolf Wortmann <http://wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
  *
