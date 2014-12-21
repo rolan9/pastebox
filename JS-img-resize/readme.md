@@ -18,7 +18,7 @@ Eine Datei (z.B. aus Inputfeld)
 file {name: '*',type: 'image/*', size: >0, path: ''} (object)
 ```
 #### maxSize
-Maximale Höhe bzw. Breite des Bildes
+Maximale Höhe bzw. Breite des Bildes in Pixeln
 ``````javascript
 0 (int)
 ```
