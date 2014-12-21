@@ -1,31 +1,51 @@
 <!doctype html>
 <html>
-	<head>
-		<title>JS-img-resize</title>
-		<script src="../jquery-1.10.2.min.js"></script>
-		<script src="resize.js"></script>
-		<script>
-			$(document).ready(function(){
-				init();
-			});
-			function init(){
-			    $('input[type="file"]').change(function(event) {
-			    	event.preventDefault();
-					var files = event.target.files;
-					// foreach image in file input
-					$.each(files,function(i, file){
-						resize_file(file, 100, function (resizedDataUrl) {
-							// do sth with the dataUrl
-							// demo mode
-							console.log(resizedDataUrl);
-							$('body').append('<img src="'+resizedDataUrl+'">');
-						});
-					});
-				});
-			};
-		</script>
-	</head>
-	<body>
-		<input type="file" multiple>
-	</body>
+    <head>
+        <title>JS-img-resize</title>
+        <script src="../jquery-1.10.2.min.js"></script>
+        <script src="resize.js"></script>
+        <script>
+            $(document).ready(function(){
+                init();
+            });
+            function init(){
+                $('input[type="file"]').change(function(event) {
+                    event.preventDefault();
+                    var files = event.target.files;
+                    // foreach image in file input
+                    $.each(files,function(i, file){
+                        resize_file(file, 250, function (resizedDataUrl) {
+                            // do sth with the dataUrl
+                            // demo mode
+                            //console.log(resizedDataUrl);
+                            $('body').append('<img src="'+resizedDataUrl+'">');
+                        });
+                    });
+                });
+            };
+        </script>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(50,50,50);
+            padding: 40px;
+        }
+        img{
+            max-width: 100%;
+            display: block;
+            margin: 10px 0;
+        }
+        input{
+            background-color: rgba(0,0,0, .5);
+            padding: 5px;
+            color: rgb(220,220,220);
+        }
+        </style>
+    </head>
+    <body>
+        <input type="file" multiple>
+    </body>
 </html>
