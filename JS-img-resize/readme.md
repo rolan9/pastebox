@@ -12,3 +12,24 @@ resize_dataUrl( dataUrl, maxSize, callback );
 ```
 __Achtung!__ prüfe vor der Übergabe ob die DataUrl wirklich die eines Bildes ist!
 ## Parameter
+#### file
+Eine Datei (z.B. aus Inputfeld)
+``````javascript
+file {name: '*',type: 'image/*', size: >0, path: ''} (object)
+```
+#### maxSize
+Maximale Höhe bzw. Breite des Bildes
+``````javascript
+0 (int)
+```
+#### callback
+``````javascript
+function(resizedDataUrl){} (function)
+```
+
+### Beispiel
+``````javascript
+resize_dataUrl( file, 200, function (resizedDataUrl) {
+    console.log(resizedDataUrl);
+} );
+```
