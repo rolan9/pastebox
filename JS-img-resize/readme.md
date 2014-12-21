@@ -29,7 +29,7 @@ function(resizedDataUrl){} (function)
 
 ### Beispiel
 ``````javascript
-resize_dataUrl( file, 200, function (resizedDataUrl) {
+resize_file( file, 200, function (resizedDataUrl) {
     console.log(resizedDataUrl);
 } );
 ```
