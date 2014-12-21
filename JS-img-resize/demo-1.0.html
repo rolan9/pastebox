@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>JS-img-resize</title>
+		<script src="../js/jquery-1.10.2.min.js"></script>
+		<script src="resize.js"></script>
+		<script>
+			$(document).ready(function(){
+				init();
+			});
+			function init(){
+			    $('input[type="file"]').change(function(event) {
+			    	event.preventDefault();
+					var files = event.target.files;
+					// foreach image in file input
+					$.each(files,function(i, file){
+						resize_file(file, 100, function (resizedDataUrl) {
+							// do sth with the dataUrl
+							// demo mode
+							console.log(resizedDataUrl);
+							$('body').append('<img src="'+resizedDataUrl+'">');
+						});
+					});
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<input type="file" multiple>
+	</body>
+</html>
