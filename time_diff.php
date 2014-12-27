@@ -5,12 +5,12 @@
  * @param string $end = Endtime-Timestamp hh:mm[:ss] (h=hour, m=minute, s=second)
  *
  * @return array [
- *   'o-t'  => Orginal Timestamp hh:mm (h=hour, m=minute),
+ *   'o-t'  => Orginal Timestamp        hh:mm (h=hour, m=minute),
  *   't'    => Timestamp after rounding hh:mm (h=hour, m=minute),
- *   'o-h'  => Orginal Hours,
- *   'h'    => Hours after rounding,
- *   'o-m'  => Orginal Minutes, 
- *   'm'    => Minutes after rounding
+ *   'o-h'  => Orginal Hours            hh (h=hour),
+ *   'h'    => Hours after rounding     hh (h=hour),
+ *   'o-m'  => Orginal Minutes          mm (m=minute), 
+ *   'm'    => Minutes after rounding   mm (m=minute),
  *  ] Informations over the time difference
  *
  * @uses get_next_XV() to round Minutes in XV-Minute (15-Minute) steps
@@ -20,13 +20,15 @@
 function time_diff($start, $end=false){
     $end = $end ? $end : date("H:i"); //Wenn $end leer, benutze aktuelle Zeit
 
-    $start_d = new DateTime("0000-00-00 ".$start);//Neuen START timestamp mit angegebenen Stunden
-    $end_d = new DateTime("0000-00-00 ".$end);//Neuen END timestamp mit angegebenen Stunden
+    $start_d = new DateTime("0000-00-00 ".$start);//Neuen START-Timestamp mit angegebenen Stunden:Minuten[:Sekunden]
+    $end_d = new DateTime("0000-00-00 ".$end);//Neuen END-Timestamp mit angegebenen Stunden:Minuten[:Sekunden]
+
     if($start_d > $end_d){//Wenn Startzeit höher als Endzeit
         trigger_error('Starttime is greater than Endtime!');//Fehlermeldung ausgeben
         return false;//False zurückgeben
     }
-    $diff=$end_d->diff($start_d);//Differenz zweishcen beiden Zeiten ermitteln
+    
+    $diff=$end_d->diff($start_d);//Differenz zwischen beiden Zeiten ermitteln
 
     $std = (int)$diff->h;//Stunden speichern
     $min = (int)$diff->i;//Minuten speichern
@@ -36,12 +38,12 @@ function time_diff($start, $end=false){
     $XV_std = $XV_min == 00 ? ($std + 1) : $std;//wenn auf ganze Stunde aufgerundet wurde, Eine stunde dazu zählen
 
     //Rückgabe zusammenbauen
-    $r['o-t'] = $std.':'.$min;//Orginal Timestamp
-    $r['t'] = $XV_std.':'.$XV_min;//Gerundeter Timestamp
-    $r['o-h'] = $std;//Orginal Stunden
-    $r['h'] = $XV_std;//'Gerundete' Stunden
-    $r['o-m'] = $min;//Orginal Minuten
-    $r['m'] = $XV_min;//Gerundete Minuten
+    $r['o-t']   = $std.':'.$min;        //Orginal Timestamp
+    $r['t']     = $XV_std.':'.$XV_min;  //Gerundeter Timestamp
+    $r['o-h']   = $std;                 //Orginal Stunden
+    $r['h']     = $XV_std;              //'Gerundete' Stunden
+    $r['o-m']   = $min;                 //Orginal Minuten
+    $r['m']     = $XV_min;              //Gerundete Minuten
 
     return $r;
 }//hour_diff()
@@ -66,4 +68,3 @@ function get_next_XV($m){
     }
     return $x;
 }//get_next_XV()
-?>
