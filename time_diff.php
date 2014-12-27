@@ -24,7 +24,7 @@ function time_diff($start, $end=false){
     $end_d = new DateTime("0000-00-00 ".$end);//Neuen END timestamp mit angegebenen Stunden
     if($start_d > $end_d){//Wenn Startzeit höher als Endzeit
         trigger_error('Starttime is greater than Endtime!');//Fehlermeldung ausgeben
-        //return false;//False zurückgeben
+        return false;//False zurückgeben
     }
     $diff=$end_d->diff($start_d);//Differenz zweishcen beiden Zeiten ermitteln
 
