@@ -5,13 +5,13 @@
  * @param string $end = Endtime-Timestamp hh:mm[:ss] (h=hour, m=minute, s=second)
  *
  * @return array [
- *   'o-t'  => int    Orginal Timestamp        hh:mm (h=hour, m=minute),
- *   't'    => int    Timestamp after rounding hh:mm (h=hour, m=minute),
- *   'o-h'  => int    Orginal Hours            hh (h=hour),
- *   'h'    => int    Hours after rounding     hh (h=hour),
- *   'o-m'  => int    Orginal Minutes          mm (m=minute), 
+ *   'o-t'  => string Orginal Timestamp        hh:mm (h=hour, m=minute),
+ *   't'    => string Timestamp after rounding hh:mm (h=hour, m=minute),
+ *   'o-h'  => string Orginal Hours            hh (h=hour),
+ *   'h'    => string Hours after rounding     hh (h=hour),
+ *   'o-m'  => string Orginal Minutes          mm (m=minute),
  *   'm'    => string Minutes after rounding   mm (m=minute),
- *  ] Informations over the time difference
+ *  ] Informations over the time difference | String because: ( (int) 0x ) converts 0x to x ; ( 04 -> 4)
  *
  * @uses get_next_XV() to round Minutes in XV-Minute (15-Minute) steps
  *
@@ -37,6 +37,10 @@ function time_diff($start, $end=false){
 
     $XV_std = $XV_min == '00' ? ($std + 1) : $std;//wenn auf ganze Stunde aufgerundet wurde, Eine stunde dazu zählen
 
+    foreach (['std','min','XV_std','XV_min'] as $varname) {//Alle Zeitangaben mit Nullern vorne auffüllen
+        $$varname = str_pad($$varname, 2, '0', STR_PAD_LEFT);
+    }
+    
     //Rückgabe zusammenbauen
     $r['o-t']   = $std.':'.$min;        //Orginal Timestamp
     $r['t']     = $XV_std.':'.$XV_min;  //Gerundeter Timestamp
@@ -63,7 +67,7 @@ function get_next_XV($m){
             $x = 45;
             break;
         default://Wenn sonnst nix zutrifft ( mehr als 45 Minuten )
-            $x = '00';//String because: ( (int) 00 ) converts 00 to 0;
+            $x = 00;
             break;
     }
     return $x;
