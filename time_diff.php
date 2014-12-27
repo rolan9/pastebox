@@ -1,8 +1,8 @@
 <?php
 /**
  * function time_diff($start, $end)
- * @param string $start = Starttime-Timestamp hh:mm (h=hour, m=minute)
- * @param string $end = Endtime-Timestamp hh:mm (h=hour, m=minute)
+ * @param string $start = Starttime-Timestamp hh:mm[:ss] (h=hour, m=minute, s=second)
+ * @param string $end = Endtime-Timestamp hh:mm[:ss] (h=hour, m=minute, s=second)
  *
  * @return array [
  *   'o-t'  => Orginal Timestamp hh:mm (h=hour, m=minute),
