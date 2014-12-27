@@ -5,12 +5,12 @@
  * @param string $end = Endtime-Timestamp hh:mm[:ss] (h=hour, m=minute, s=second)
  *
  * @return array [
- *   'o-t'  => Orginal Timestamp        hh:mm (h=hour, m=minute),
- *   't'    => Timestamp after rounding hh:mm (h=hour, m=minute),
- *   'o-h'  => Orginal Hours            hh (h=hour),
- *   'h'    => Hours after rounding     hh (h=hour),
- *   'o-m'  => Orginal Minutes          mm (m=minute), 
- *   'm'    => Minutes after rounding   mm (m=minute),
+ *   'o-t'  => int    Orginal Timestamp        hh:mm (h=hour, m=minute),
+ *   't'    => int    Timestamp after rounding hh:mm (h=hour, m=minute),
+ *   'o-h'  => int    Orginal Hours            hh (h=hour),
+ *   'h'    => int    Hours after rounding     hh (h=hour),
+ *   'o-m'  => int    Orginal Minutes          mm (m=minute), 
+ *   'm'    => string Minutes after rounding   mm (m=minute),
  *  ] Informations over the time difference
  *
  * @uses get_next_XV() to round Minutes in XV-Minute (15-Minute) steps
@@ -27,15 +27,15 @@ function time_diff($start, $end=false){
         trigger_error('Starttime is greater than Endtime!');//Fehlermeldung ausgeben
         return false;//False zurückgeben
     }
-    
+
     $diff=$end_d->diff($start_d);//Differenz zwischen beiden Zeiten ermitteln
 
-    $std = (int)$diff->h;//Stunden speichern
-    $min = (int)$diff->i;//Minuten speichern
+    $std = $diff->h;//Stunden speichern
+    $min = $diff->i;//Minuten speichern
     
     $XV_min = get_next_XV($min);//Minuten gerundet
 
-    $XV_std = $XV_min == 00 ? ($std + 1) : $std;//wenn auf ganze Stunde aufgerundet wurde, Eine stunde dazu zählen
+    $XV_std = $XV_min == '00' ? ($std + 1) : $std;//wenn auf ganze Stunde aufgerundet wurde, Eine stunde dazu zählen
 
     //Rückgabe zusammenbauen
     $r['o-t']   = $std.':'.$min;        //Orginal Timestamp
@@ -63,7 +63,7 @@ function get_next_XV($m){
             $x = 45;
             break;
         default://Wenn sonnst nix zutrifft ( mehr als 45 Minuten )
-            $x = 00;
+            $x = '00';//String because: ( (int) 00 ) converts 00 to 0;
             break;
     }
     return $x;
