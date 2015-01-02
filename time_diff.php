@@ -19,7 +19,7 @@
  */
 function time_diff($start, $end=false){
     if(version_compare(phpversion(), '5.4.0', '<')){
-        trigger_error('PHP Version 5.4 is requiered!',E_USER_ERROR);//Fehlermeldung ausgeben
+        trigger_error('PHP Version 5.4 is requiered!',E_USER_WARNING);//Fehlermeldung ausgeben
         return false;//False zurückgeben
     }
     $end = $end ? $end : date("H:i"); //Wenn $end leer, benutze aktuelle Zeit
