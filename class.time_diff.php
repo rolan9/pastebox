@@ -2,7 +2,7 @@
 /**
  * @author, @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2015 Wolf Wortmann <http://wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
  *
- * @version 2.0
+ * @version 2.1
  *
  * class time_diff($start, $end)
  *     Calculates Timedifference between two Timestamps
