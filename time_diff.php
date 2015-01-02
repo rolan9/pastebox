@@ -18,7 +18,7 @@
  * @author, @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2014 Wolf Wortmann <http://wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
  */
 function time_diff($start, $end=false){
-    if(phpversion() < '5.4'){
+    if(version_compare(phpversion(), '5.4.0', '<')){
         trigger_error('PHP Version 5.4 is requiered!',E_USER_ERROR);//Fehlermeldung ausgeben
         return false;//False zurückgeben
     }
