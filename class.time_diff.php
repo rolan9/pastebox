@@ -2,7 +2,7 @@
 /**
  * @author, @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2015 Wolf Wortmann <http://wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
  *
- * @version 1.0
+ * @version 2.0
  *
  * class time_diff($start, $end)
  *     Calculates Timedifference between two Timestamps
@@ -59,8 +59,9 @@ class time_diff{
 		$this->ret();//Make Data public
 	}
 	private function test_before_init(){
-		if(version_compare(phpversion(), '5.4.0', '<')){
-	        throw new Exception("PHP Version 5.4 is requiered!");
+		//changed in v2.0 - needed version from 5.4.0 to 5.0.0
+		if(version_compare(phpversion(), '5.0.0', '<')){
+	       	trigger_error("PHP Version 5.0 is requiered!",E_USER_ERROR);
 	    }
 	}
 	private function init(){
@@ -79,7 +80,7 @@ class time_diff{
 	    $this->minutes = $this->XV( $this->org_minutes );//Minuten gerundet
 		$this->hours = $this->minutes == 0 ? ($this->org_hours + 1) : $this->org_hours;//wenn auf ganze Stunde aufgerundet wurde, Eine stunde dazu zählen
 
-		foreach (['org_hours','hours','org_minutes','minutes'] as $varname) {
+		foreach (array('org_hours','hours','org_minutes','minutes') as $varname) {
 			$this->$varname = str_pad($this->$varname, 2, '0', STR_PAD_LEFT);
 		}
 		$this->timestamp = $this->hours.':'.$this->minutes;
