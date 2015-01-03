@@ -21,7 +21,7 @@
  *      [o_h]   Difference Hours 'H',
  *      [m]     Difference Minutes, rounded 'i',
  *      [o_m]   Difference Minutes 'i',
- *      [error] If somthing failed, ot turns to true,
+ *      [error] If somthing failed, it turns to true,
  * ] All Data
  *
  * @link Timestamp format keys <http://php.net/manual/de/function.date.php>
@@ -52,7 +52,7 @@ class time_diff{
     //public $o_m;
         private $org_minutes;//Difference Minutes 'i'
 
-    public $error = false;
+    public $error = false;//If somthing failed, it turns to true
 
     function __construct($start, $end=false){
         $this->org_start = $start; $this->org_end = $end ? $end : date('Y-m-d H:i:s');
