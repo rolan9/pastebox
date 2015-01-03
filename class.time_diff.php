@@ -2,7 +2,7 @@
 /**
  * @author, @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2015 Wolf Wortmann <http://wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
  *
- * @version 2.2
+ * @version 2.3
  *
  * class time_diff($start, $end)
  *     Calculates Timedifference between two Timestamps
@@ -21,6 +21,7 @@
  *      [o_h]   Difference Hours 'H',
  *      [m]     Difference Minutes, rounded 'i',
  *      [o_m]   Difference Minutes 'i',
+ *      [error] If somthing failed, ot turns to true,
  * ] All Data
  *
  * @link Timestamp format keys <http://php.net/manual/de/function.date.php>
@@ -51,11 +52,21 @@ class time_diff{
     //public $o_m;
         private $org_minutes;//Difference Minutes 'i'
 
+    public $error = false;
+
     function __construct($start, $end=false){
         $this->org_start = $start; $this->org_end = $end ? $end : date('Y-m-d H:i:s');
 
         $this->test_before_init();//Functions before init
-        $this->init();//Init -> calculate Timedifference
+        try {
+            $this->init();//Init -> calculate Timedifference
+        }
+        catch (Exception $e) {
+            echo 'Error: '.$e->getMessage()."\n";
+            $this->error = true;
+            $this->ret();
+            return false;
+        }
         $this->ret();//Make Data public
     }
     private function test_before_init(){
@@ -83,8 +94,8 @@ class time_diff{
         foreach (array('org_hours','hours','org_minutes','minutes') as $varname) {
             $this->$varname = str_pad($this->$varname, 2, '0', STR_PAD_LEFT);
         }
-        $this->timestamp = $this->hours.':'.$this->minutes;
-        $this->org_timestamp = $this->org_hours.':'.$this->org_minutes;
+        $this->timestamp = date('H:i', strtotime($this->hours.':'.$this->minutes));
+        $this->org_timestamp = date('H:i', strtotime($this->org_hours.':'.$this->org_minutes));
     }
     private function ret(){
         //(Date)Timestamps Start/End [Y-m-d ]H:i[:s]
@@ -94,14 +105,14 @@ class time_diff{
         $this->o_e  = $this->org_end;
 
         //Timestamps H:i
-        $this->t    = $this->timestamp;
-        $this->o_t  = $this->org_timestamp;
+        if(!empty($this->timestamp))    {$this->t    = $this->timestamp;}
+        if(!empty($this->org_timestamp)){$this->o_t  = $this->org_timestamp;}
 
         //Timedata H/i
-        $this->h    = $this->hours;
-        $this->o_h  = $this->org_hours;
-        $this->m    = $this->minutes;
-        $this->o_m  = $this->org_minutes;
+        if(!empty($this->hours))        {$this->h    = $this->hours;}
+        if(!empty($this->org_hours))    {$this->o_h  = $this->org_hours;}
+        if(!empty($this->minutes))      {$this->m    = $this->minutes;}
+        if(!empty($this->org_minutes))  {$this->o_m  = $this->org_minutes;}
     }
     private function XV($m){
         /* Habe das mal in ne eigene Funktion ausgelagert um eine
