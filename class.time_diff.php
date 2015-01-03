@@ -2,7 +2,7 @@
 /**
  * @author, @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2015 Wolf Wortmann <http://wolf.wolfgang-m.de> / <wolf@wolfgang-m.de>
  *
- * @version 2.3
+ * @version 2.4
  *
  * class time_diff($start, $end)
  *     Calculates Timedifference between two Timestamps
@@ -70,9 +70,9 @@ class time_diff{
         $this->ret();//Make Data public
     }
     private function test_before_init(){
-        //changed in v2.0 - needed version from 5.4.0 to 5.0.0
-        if(version_compare(phpversion(), '5.0.0', '<')){
-            trigger_error("PHP Version 5.0 is requiered!",E_USER_ERROR);
+        //changed in v2.4 - needed version from 5.4.0 to 5.2.0
+        if(version_compare(phpversion(), '5.2.0', '<')){
+            trigger_error("PHP Version 5.2 is requiered!",E_USER_ERROR);
         }
     }
     private function init(){
