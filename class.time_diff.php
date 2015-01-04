@@ -71,8 +71,8 @@ class time_diff{
     }
     private function test_before_init(){
         //changed in v2.4 - needed version from 5.4.0 to 5.2.0
-        if(version_compare(phpversion(), '5.2.0', '<')){
-            trigger_error("PHP Version 5.2 is requiered!",E_USER_ERROR);
+        if(version_compare(phpversion(), '5.3.0', '<')){
+            trigger_error("PHP Version 5.3 is requiered!",E_USER_ERROR);
         }
     }
     private function init(){
