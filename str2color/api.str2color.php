@@ -3,7 +3,7 @@
 	 * API str2color
 	 * v. 1.0.0
 	 *
-	 * @author (c) Copyright 2014 Wolf Wortmann / <wolf@wolfgang-m.de>
+	 * @author (c) Copyright 2015 Wolf Wortmann / <wolf@wolfgang-m.de>
 	 * @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2015 Wolf Wortmann / <wolf@wolfgang-m.de>
 	 *
 	 * @method GET
