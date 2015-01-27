@@ -7,6 +7,7 @@
 	 * @copyright Feel free to use, modify and redistribute this code. But please keep this copyright notice. (c) Copyright 2015 Wolf Wortmann / <wolf@wolfgang-m.de>
 	 *
 	 * @method GET
+	 * @url = http://color.elementcode.de/api.str2color.php?
 	 *
 	 * @param (json) $_GET['data'] = {
 	 *  (string) string = String to convert in Color 
@@ -15,7 +16,7 @@
 	 * } = API-Options
 	 *
 	 * @echo (json) {
-	 *	(obj) 	 rgb = [R,G,B]
+	 *  (obj) 	 rgb = [R,G,B]
 	 *  (string) rgb_string= R,G,B - RGB Colorstring
 	 *  (string) hex = Hexadecimalnumer
 	 *  (int) 	 lightness = Lightness index
