@@ -48,6 +48,7 @@ Note HTML-Colornames while converting; for example `string=blue` are converted t
 Note HEX-Colornames while converting; for example `string=00FF00` are converted to HEX `#00FF00`.
 ##Examples
 ###Call it via jQuery AJAX
+[api.ajax-example.html](https://github.com/wolf-w/pastebox/blob/master/str2color/api.ajax-example.html)
 ```javascript
 $(document).ready(function(){
     var $form = $('.theForm');
