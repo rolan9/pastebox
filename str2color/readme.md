@@ -11,6 +11,7 @@ Example Querystring:
 ?data={"string":"Hello World","html_colorNames":0}
 ```
 Meaning of int Variables in bool context (intBool)
+
 | int |  bool  |
 |:----:|:-----:|
 |   1  | true  |
