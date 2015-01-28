@@ -16,8 +16,8 @@ The str2color API converts a given String into a Color and give u back some Info
  - [Types](#types)
 - [Parameter](#parameter)
  - [string](#user_content-string-string)
- - [html_colorNames](#html_colorNames-intbool-)
- - [hex_colorNames](#hex_colorNames-intbool-)
+ - [html_colorNames](#html_colorNames-intbool)
+ - [hex_colorNames](#hex_colorNames-intbool)
 
 ##Data
 ###URL
