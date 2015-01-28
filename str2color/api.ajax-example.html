@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>AJAX example - str2color API</title>
+		<meta charset="utf-8">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){//Wenn HTML fertig geladen
+				init_form();
+			})
+			function init_form(){
+				var $form = $('.theForm');//Das Formular als jQuery-object
+				$form.submit(function(event){//Beim Absenden des Formulars
+					event.preventDefault();//Absenden verhindern
+					var opt = JSON.stringify($form.serializeObject());//Das form in JSON format konvertieren
+					$.ajax({
+						'url' : 'http://color.elementcode.de/api.str2color.php',//Die API URL
+						'type' : 'GET',
+						'data' : 'data='+opt,
+					}).done(function (data) {//Wenn alles geklapt
+						show(data);
+					}).fail(function(){//Wenn was schiefgelaufen ist
+						alert('Oooooops, da ist etwas schief gegangen. :(');
+					});
+				});
+			}
+			function show(data){
+				var result = jQuery.parseJSON(data);//Den JSON String in ein JS-Objekt umwandeln
+
+				console.log(result);
+				alert(//Zur veranschaulichung einmal alle Daten ausgeben
+					'RGB: '+result.rgb_string+'\n'+
+					'R: '+result.rgb[0]+'\n'+
+					'G: '+result.rgb[1]+'\n'+
+					'B: '+result.rgb[2]+'\n'+
+					'HEX: #'+result.hex+'\n'+
+					'Text Color: #'+result.text_color+'\n'+
+					'Lightness: '+result.lightness+'\n'+
+					'String: '+result.string
+				);
+			}
+			
+			/* do NOT edit! */$.fn.serializeObject = function(){var o={};var a=this.serializeArray();$.each(a, function() {if(o[this.name]!==undefined){if(!o[this.name].push){o[this.name]=[o[this.name]];}o[this.name].push(this.value||'');}else{o[this.name]=this.value||'';}});return o;};// $.fn.serializeObject
+		</script>
+	</head>
+	<body>
+		<noscript>
+			Ohne Javascript kommst Du nicht weit..
+		</noscript>
+		<form class="theForm">
+			<input name="string">
+			<input type="submit">
+		</form>
+	</body>
+</html>
