@@ -1,8 +1,28 @@
 # str2color API
+The str2color API converts a given String into a Color and give u back some Informations about the converted color
+```
+(json) {
+  (array)  rgb = [R,G,B]
+  (string) rgb_string= R,G,B - RGB Colorstring
+  (string) hex = Hexadecimalnumer
+  (int)    lightness = Lightness index
+  (string) text_color = recommended Textcolor (based on Lightness index)
+  (string) string = Converted String - orginal
+}
+```
+##Contents
+- [Data](#data)
+ - [URL](#url)
+ - [Types](#types)
+- [Parameter](#parameter)
+ - [string](#string-string-)
+ - [html_colorNames](#html_colorNames-intbool-)
+ - [hex_colorNames](#hex_colorNames-intbool-)
+
 ##Data
 ###URL
 Call the API script: `http://color.elementcode.de/api.str2color.php`.
-###Types
+###Types [types]
 The API supports only `GET` Parameters!
 ##Parameter
 Parameters are all stored in a JSON as Param `data`
@@ -10,7 +30,7 @@ Example Querystring:
 ```
 ?data={"string":"Hello World","html_colorNames":0}
 ```
-Meaning of int Variables in bool context (intBool)
+Meaning of `int` Variables in `bool` context (intBool)
 
 | int |  bool  |
 |:----:|:-----:|
@@ -18,7 +38,7 @@ Meaning of int Variables in bool context (intBool)
 |   0  | false |
 ###string (string)
 The string Parameter contains the String what should be converted.
-###html_colorNames (int)
+###html_colorNames (intBool)
 Note HTML-Colornames while converting; for example `string=blue` are converted to HEX `#0000FF`.
 ###hex_colorNames (intBool)
 Note HEX-Colornames while converting; for example `string=00FF00` are converted to HEX `#00FF00`.
