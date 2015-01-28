@@ -1,4 +1,16 @@
 # str2color API
+##Contents
+- [str2color API](#description)
+- [Data](#data)
+ - [URL](#url)
+ - [Types](#types)
+- [Parameter](#parameter)
+ - [string](#string-string)
+ - [html_colorNames](#html_colornames-intbool)
+ - [hex_colorNames](#hex_colornames-intbool)
+- [Examples](#examples)
+ - [jQuery AJAX](#string-string)
+##Description
 The str2color API converts a given String into a Color and give u back some Informations about the converted color
 ```
 (json) {
@@ -10,15 +22,6 @@ The str2color API converts a given String into a Color and give u back some Info
   (string) string = Converted String - orginal
 }
 ```
-##Contents
-- [Data](#data)
- - [URL](#url)
- - [Types](#types)
-- [Parameter](#parameter)
- - [string](#string-string)
- - [html_colorNames](#html_colornames-intbool)
- - [hex_colorNames](#hex_colornames-intbool)
-
 ##Data
 ###URL
 Call the API script: `http://color.elementcode.de/api.str2color.php`.
@@ -43,7 +46,7 @@ Note HTML-Colornames while converting; for example `string=blue` are converted t
 ###hex_colorNames (intBool)
 Note HEX-Colornames while converting; for example `string=00FF00` are converted to HEX `#00FF00`.
 ##Examples
-###Call it via jQuery
+###Call it via jQuery AJAX
 ```javascript
 $(document).ready(function(){
     var $form = $('.theForm');
