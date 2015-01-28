@@ -1,8 +1,24 @@
 # str2color API
-
-####Docs commin soon
-Use the File doc's ..
-
+####Call it via jQuery
+```javascript
+$(document).ready(function(){
+    var $form = $('.theForm');
+    $form.submit(function(event){
+        event.preventDefault();
+        var opt = JSON.stringify($form.serializeObject());
+        $.ajax({
+            'url' : 'http://color.elementcode.de/api.str2color.php',
+            'type' : 'GET',
+            'data' : 'data='+opt,
+        }).done(function (data) {
+            show(data);
+        }).fail(function(){
+            alert('Oooooops, da ist etwas schief gegangen. :(');
+        });
+    });
+});
+/* do NOT edit! */$.fn.serializeObject = function(){var o={};var a=this.serializeArray();$.each(a, function() {if(o[this.name]!==undefined){if(!o[this.name].push){o[this.name]=[o[this.name]];}o[this.name].push(this.value||'');}else{o[this.name]=this.value||'';}});return o;};// $.fn.serializeObject
+```
 API str2color
 v. 1.0.0
 
