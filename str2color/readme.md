@@ -10,7 +10,7 @@
  - [hex_colorNames](#hex_colornames-intbool)
 - [Examples](#examples)
  - [jQuery AJAX](#call-it-via-jquery-ajax)
- 
+- [Copyright/License](#copyrightlicense)
 ##Description
 The str2color API converts a given String into a Color and give u back some Informations about the converted color
 ```
