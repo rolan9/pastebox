@@ -2,7 +2,7 @@
     error_reporting(E_ALL);//Alle Fehler anzeigen
 
     //Festlegen der Zeichenkette für spätere Parameterübergabe
-    $str = 'str2color';
+    $str = 'Hallo Welt!';
 
     //Aufrufen der API mit übergabe von Parametern
     $json = api_str2color([
@@ -11,17 +11,17 @@
         'hex_colorNames' => true,//HEX Farbnamen wie '0000FF','FF0000'.. werden jeweils auch als Blau bzw. Rot ausgegeben
     ]);
     //Das Ergebniss in ein Array umwandeln
-    $arr = json_decode($json,true);
+    $result_arr = json_decode($json,true);
 
     //Mit dem Ergebniss-Array arbeiten
     echo '
     <div style="
-        color: #'.$arr['text_color'].';
-        background: rgb('.$arr['rgb_string'].');
+        color: #'.$result_arr['text_color'].';
+        background: rgb('.$result_arr['rgb_string'].');
         padding: 40px;
         "
     >
-    '.$arr['rgb_string'].'
+    '.$result_arr['rgb_string'].'
     </div>
     ';
 
