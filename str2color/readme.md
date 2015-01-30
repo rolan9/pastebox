@@ -77,8 +77,8 @@ The HTML code:
     <input type="submit">
 </form>
 ```
-###Call it via jQuery AJAX
-[api.ajax-example.html](https://github.com/wolf-w/pastebox/blob/master/str2color/api.ajax-example.html)
+###Call it via PHP cUrl
+[api.cphp-example.html](https://github.com/wolf-w/pastebox/blob/master/str2color/api.php-example.php)
 ```php
 //Aufrufen der API mit übergabe von Parametern
 $json = api_str2color([
