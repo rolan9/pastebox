@@ -73,7 +73,7 @@ The HTML code:
 <form class="theForm">
     <input name="string">
     <!-- another Param for example -->
-    <input name="hex_colorNames" value="1" hidden>
+    <input name="hex_colorNames" value="0" hidden>
     <input type="submit">
 </form>
 ```
