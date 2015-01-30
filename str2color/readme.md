@@ -67,6 +67,14 @@ $(document).ready(function(){
 });
 /* do NOT edit! */$.fn.serializeObject = function(){var o={};var a=this.serializeArray();$.each(a, function() {if(o[this.name]!==undefined){if(!o[this.name].push){o[this.name]=[o[this.name]];}o[this.name].push(this.value||'');}else{o[this.name]=this.value||'';}});return o;};// $.fn.serializeObject
 ```
-
+The HTML code:
+```html
+<form class="theForm">
+    <input name="string">
+    <!-- another Param for example -->
+    <input name="hex_colorNames" value="1" hidden>
+    <input type="submit">
+</form>
+```
 ##COPYRIGHT/LICENSE
-Feel free to use, modify and redistribute this code. But please keep this copyright/license notice. (c) Copyright 2015 Wolf Wortmann / <wolf@wolfgang-m.de>
+Feel free to use, modify and redistribute this code. But please keep this copyright/license notice. (c) Copyright 2015 Wolf Wortmann <http://elementcode.de>/ <wolf@wolfgang-m.de>
