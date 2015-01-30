@@ -93,7 +93,6 @@ $result_arr = json_decode($json,true);//Das Ergebniss in ein Array umwandeln
 // API_FUNCTION - DO NOT EDIT
 function api_str2color($options){
     $tmp = false;
-
     $url = 'http://color.elementcode.de/api.str2color.php?data='.json_encode($options);
     $ch = curl_init($url);
     if ($ch) {
@@ -103,7 +102,6 @@ function api_str2color($options){
         $tmp = ob_get_contents();
         ob_end_clean();
     }
-
     return $tmp;
 }// API_FUNCTION()
 ```
