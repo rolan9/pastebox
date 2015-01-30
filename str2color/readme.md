@@ -10,6 +10,7 @@
  - [hex_colorNames](#hex_colornames-intbool)
 - [Examples](#examples)
  - [jQuery AJAX](#call-it-via-jquery-ajax)
+ -  [PHP cUrl](#call-it-via-php-curl)
 - [Copyright/License](#copyrightlicense)
 
 ##Description
@@ -78,7 +79,7 @@ The HTML code:
 </form>
 ```
 ###Call it via PHP cUrl
-[api.cphp-example.html](https://github.com/wolf-w/pastebox/blob/master/str2color/api.php-example.php)
+[api.php-example.html](https://github.com/wolf-w/pastebox/blob/master/str2color/api.php-example.php)
 ```php
 //Aufrufen der API mit übergabe von Parametern
 $json = api_str2color([
