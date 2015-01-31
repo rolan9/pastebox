@@ -47,7 +47,7 @@ The string Parameter contains the String what should be converted.
 ###html_colorNames (intBool)
 Note HTML-Colornames while converting; for example `string=blue` are converted to HEX `#0000FF`.
 ###hex_colorNames (intBool)
-Note HEX-Colornames (only HTML/CSS specificated colors) while converting; for example `string=00FF00` are converted to HEX `#00FF00`.
+Note HEX-Colornames (only HTML/CSS specificated color representations) while converting; for example `string=00FF00` are converted to HEX `#00FF00`.
 ##Examples
 ###Call it via jQuery AJAX
 [api.ajax-example.html](https://github.com/wolf-w/pastebox/blob/master/str2color/api.ajax-example.html)
