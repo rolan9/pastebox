@@ -1,0 +1,116 @@
+.vtcha,
+.vtcha *{
+  margin: 0;
+  padding: 0;
+}
+.vtcha{
+  font-family: sans-serif;
+  background-color: rgb(220,220,220);
+  color: rgb(50,50,50);
+  padding: 20px;
+  transition: all .3s;
+  max-width: 170px;
+}
+.vtcha.hide{
+  opacity: 0.6;
+}
+.vtcha .intro{
+  color: rgb(62,66,84);
+  font-weight: 200;
+}
+.vtcha .item-box{
+  position: relative;
+  height: 50px;
+  margin-top: 10px;
+}
+.vtcha .item-background-wrap,
+.vtcha .item-wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.vtcha .item-background-wrap:after,
+.vtcha .item-wrap:after{
+  display: block;
+  content: '';
+  clear: both;
+}
+.vtcha .item-styles{
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  float: left;
+
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+
+  background-color: rgb(170,170,170);
+}
+.vtcha .item-styles + .item-styles{
+  margin-left: 10px;
+}
+.vtcha .item-background{
+  color: rgb(140,140,140);
+  box-shadow: inset 0 0 4px rgba(0,0,0, .1);
+}
+.vtcha .item{
+  box-shadow: 3px 3px 3px rgba(0,0,0, .2);
+
+
+  background-color: rgb(62,66,84);
+  color: rgb(142,146,164);
+}
+.vtcha .item.animate{
+  transition: all .6s;
+}
+.vtcha .item.is-dragging{
+  z-index: 10;
+  
+  color: rgb(255,255,255);
+}
+.vtcha .target-box{
+  height: 50px;
+  margin-top: 10px;
+  opacity: .6;
+  transition: all .4s;
+}
+.vtcha .target-box:after{
+  display: block;
+  content: '';
+  clear: both;
+}
+.vtcha .target-box.show{
+  opacity: 1;
+}
+.vtcha .target-box.complete{
+  opacity: 1;
+}
+.vtcha .target{
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  float: left;
+
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+
+  background-color: rgb(142,146,164);
+  color: rgb(102,106,124);
+
+  transition: all .4s;
+}
+.vtcha .target + .target{
+  margin-left: 10px;
+}
+.vtcha .target-box.show .target{
+  color: rgb(62,66,84);
+}
+.vtcha .target.highlight{
+  transform: scale(1.1);
+}
+.vtcha .target-box.complete .target.complete{
+  background-color: rgb(65,148,89);
+  color: rgb(62,66,84);
+}
