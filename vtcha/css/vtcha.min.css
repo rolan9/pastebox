@@ -1,0 +1,15 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+/**
+ * vtcha
+ * https://github.com/wolf-w/pastebox/tree/master/vtcha
+ *
+ * v 2015.02.15-01
+ *
+ * LICENCE Feel free to use, modify and redistribute this code. But please keep this copyright notice.
+ * (c) Copyright 2015 Wolf Wortmann <wolf@wolfgang-m.de> / <http://elementcode.de>
+ *
+ * Needs modernizr.prefixed() from http://modernizr.com/download/#-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load
+ * and draggabilly from http://draggabilly.desandro.com
+ * and dragdrop.js from https://github.com/codrops/DragDropInteractions (http://www.codrops.com)
+ */
+.vtcha,.vtcha *{margin:0;padding:0}.vtcha{font-family:sans-serif;background-color:#dcdcdc;color:#323232;padding:20px;transition:all .3s;max-width:170px}.vtcha.hide{opacity:.6}.vtcha .intro{color:#3e4254;font-weight:200}.vtcha .item-box{position:relative;height:50px;margin-top:10px}.vtcha .item-background-wrap,.vtcha .item-wrap{position:absolute;top:0;left:0}.vtcha .item-background-wrap:after,.vtcha .item-wrap:after{display:block;content:'';clear:both}.vtcha .item-styles{font-size:30px;line-height:50px;text-align:center;float:left;height:50px;width:50px;border-radius:3px;background-color:#aaa}.vtcha .item-styles+.item-styles{margin-left:10px}.vtcha .item-background{color:#8c8c8c;box-shadow:inset 0 0 4px rgba(0,0,0,.1)}.vtcha .item{box-shadow:3px 3px 3px rgba(0,0,0,.2);cursor:move;cursor:-webkit-grab;cursor:grab;background-color:#3e4254;color:#8e92a4}.vtcha .item.animate{transition:all .6s}.vtcha .item.is-dragging{z-index:10;cursor:-webkit-grabbing;cursor:grabbing;color:#fff}.vtcha .target-box{height:50px;margin-top:10px;opacity:.6;transition:all .4s}.vtcha .target-box:after{display:block;content:'';clear:both}.vtcha .target-box.complete,.vtcha .target-box.show{opacity:1}.vtcha .target{font-size:30px;line-height:50px;text-align:center;float:left;height:50px;width:50px;border-radius:3px;background-color:#8e92a4;color:#666a7c;transition:all .4s}.vtcha .target+.target{margin-left:10px}.vtcha .target-box.show .target{color:#3e4254}.vtcha .target.highlight{transform:scale(1.1)}.vtcha .target-box.complete .target.complete{background-color:#419459;color:#3e4254}
