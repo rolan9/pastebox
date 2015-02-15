@@ -5,7 +5,8 @@
  - [ok](#string-string)
  - [hide](#hide-string)
 - [Examples](#examples)
- - [Call it](#call-it)
+ - [Simply](#simply)
+ - [Hardcore](#hardcore)
 - [Copyright/License](#copyrightlicense)
 
 ##Description
@@ -14,15 +15,38 @@ Vtcha crates a drag&drop captcha on a input element. If the vtcha get completed 
 ###ok (string)
 Input value after vtcha completation.
 Default is `vtcha_accepted_2K15`
+```javascript
+$('input').vtcha({
+    ok: 'human-detected',
+})
+```
 ###hide (string)
 It's a simple CSS selector eg: '.the-info-p-tag, #no-js-info'.
 Elements selected by the CSS selector get hidden on vtcha's init.
 Default is `null`.
+```javascript
+$('input').vtcha({
+    hide: '.the-info-p-tag, #another_tag',
+})
+```
 ##Examples
-###Call it
+###Simply
 ```javascript
 $(document).ready(function(){
-    $('input[data-vtcha]').vtcha()
+    $('input').vtcha()
+});
+```
+The HTML code:
+```html
+<input>
+```
+###Hardcore
+```javascript
+$(document).ready(function(){
+    $('input[data-vtcha]').vtcha({
+        ok: 'human-detected',
+        hide: '.info',
+    })
 });
 ```
 The HTML code:
@@ -30,6 +54,7 @@ The HTML code:
 <form>
     Name: <input>
     Email: <input type="email">
+    <p class="info">Javascript required!</p>
     <input data-vtcha>
     <input type="submit">
 </form>
