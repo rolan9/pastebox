@@ -2,7 +2,7 @@
 ##Contents
 - [vtcha](#description)
 - [Parameter](#parameter)
- - [ok](#string-string)
+ - [ok](#ok-string)
  - [hide](#hide-string)
 - [Examples](#examples)
  - [Simply](#simply)
