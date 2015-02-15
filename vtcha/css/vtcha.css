@@ -1,5 +1,17 @@
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-
+ /**
+  * vtcha
+  * https://github.com/wolf-w/pastebox/tree/master/vtcha
+  *
+  * v 2015.02.15-01
+  *
+  * LICENCE Feel free to use, modify and redistribute this code. But please keep this copyright notice.
+  * (c) Copyright 2015 Wolf Wortmann <wolf@wolfgang-m.de> / <http://elementcode.de>
+  *
+  * Needs modernizr.prefixed() from http://modernizr.com/download/#-shiv-cssclasses-prefixed-testprop-testallprops-domprefixes-load
+  * and draggabilly from http://draggabilly.desandro.com
+  * and dragdrop.js from https://github.com/codrops/DragDropInteractions (http://www.codrops.com)
+  */
 .vtcha,
 .vtcha *{
   margin: 0;
@@ -58,7 +70,9 @@
 }
 .vtcha .item{
   box-shadow: 3px 3px 3px rgba(0,0,0, .2);
-
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
 
   background-color: rgb(62,66,84);
   color: rgb(142,146,164);
@@ -68,7 +82,9 @@
 }
 .vtcha .item.is-dragging{
   z-index: 10;
-  
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+
   color: rgb(255,255,255);
 }
 .vtcha .target-box{
