@@ -1,6 +1,9 @@
 /*!
  * ContextMenu
  *
+ * Runs an defined callback after click on the menuitem
+ * Callback parameters are the rightclick event and the target of it, so you can handle element specific actions
+ *
  * @url <//github.com/wolf-w/pastebox/contextmenu/>
  * @author Wolf Wortmann <//elementcode.de> / <wolf@wolfgang-m.de>
  * @copyright (c) Copyright 2016 Wolf Wortmann <http://elementcode.de> / <wolf@wolfgang-m.de>
