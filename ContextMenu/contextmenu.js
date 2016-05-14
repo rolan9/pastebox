@@ -23,7 +23,7 @@
 			if( event.button == 2 ) {
 				_._history.push(event);
 			}
-		}
+		},
 		handleItemClick: function () {
 			var callback = this.getAttribute('data-contextmenu');
 			if(typeof callback != 'undefined'){
