@@ -1,5 +1,6 @@
 # str2color API
-##Contents
+## Contents
+
 - [str2color API](#description)
 - [Data](#data)
  - [URL](#url)
@@ -13,7 +14,7 @@
  -  [PHP cUrl](#call-it-via-php-curl)
 - [Copyright/License](#copyrightlicense)
 
-##Description
+## Description
 The str2color API converts a given String into a Color and give u back some Informations about the converted color
 ```
 (json) {
@@ -25,12 +26,12 @@ The str2color API converts a given String into a Color and give u back some Info
   (string) string = Converted String - orginal
 }
 ```
-##Data
-###URL
+## Data
+### URL
 Call the API script: `http://color.elementcode.de/api.str2color.php`.
-###Types
+### Types
 The API supports only `GET` Parameters!
-##Parameter
+##  Parameter
 Parameters are all stored in a JSON as Param `data`
 Example Querystring:
 ```
@@ -38,18 +39,18 @@ Example Querystring:
 ```
 Meaning of `int` Variables in `bool` context (intBool)
 
-| int |  bool  |
-|:----:|:-----:|
-|   1  | true  |
-|   0  | false |
-###string (string)
+|int|bool|
+|:-:|:-:|
+|1|true|
+|0|false|
+### string (string)
 The string Parameter contains the String what should be converted.
-###html_colorNames (intBool)
+### html_colorNames (intBool)
 Note HTML-Colornames while converting; for example `string=blue` are converted to HEX `#0000FF`.
-###hex_colorNames (intBool)
+### hex_colorNames (intBool)
 Note HEX-Colornames (only HTML/CSS specificated color representations) while converting; for example `string=00FF00` are converted to HEX `#00FF00`.
-##Examples
-###Call it via jQuery AJAX
+## Examples
+### Call it via jQuery AJAX
 [api.ajax-example.html](https://github.com/wolf-w/pastebox/blob/master/str2color/api.ajax-example.html)
 ```javascript
 $(document).ready(function(){
@@ -78,10 +79,10 @@ The HTML code:
     <input type="submit">
 </form>
 ```
-###Call it via PHP cUrl
+### Call it via PHP cUrl
 [api.php-example.html](https://github.com/wolf-w/pastebox/blob/master/str2color/api.php-example.php)
 ```php
-//Aufrufen der API mit übergabe von Parametern
+//Aufrufen der API mit Ã¼bergabe von Parametern
 $json = api_str2color([
     'string' => urlencode('Hallo Welt!'),//Die Zeichenkette
     'html_colorNames' => true,//HTML Farbnamen wie 'blue','red'.. werden jeweils auch als Blau bzw. Rot ausgegeben 
@@ -105,5 +106,5 @@ function api_str2color($options){
     return $tmp;
 }// API_FUNCTION()
 ```
-##COPYRIGHT/LICENSE
+## COPYRIGHT/LICENSE
 Feel free to use, modify and redistribute this code. But please keep this copyright/license notice. (c) Copyright 2015 Wolf Wortmann <http://elementcode.de>/ <wolf@wolfgang-m.de>
